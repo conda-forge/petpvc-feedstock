@@ -1,5 +1,5 @@
 {% set name = "PETPVC" %}
-{% set version = "1.2.7" %}
+{% set version = "1.2.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/UCL/PETPVC/archive/v{{ version }}.tar.gz
-  sha256: d8f1a3351330bf551af87b04481f461ea250e120859a7696a6970f299775ad88
+  sha256: 7527e205e425d701c2dba89aef89d9164818f4f9709897c4ad372e1fa312d17f
 
 build:
   number: 0
@@ -30,7 +30,7 @@ about:
   home: https://github.com/UCL/PETPVC
   license: Apache-2.0
   license_file: LICENSE.txt
-  summary: 'Toolbox for partial volume correction (PVC) in positron emission tomography (PET)'
+  summary: Toolbox for partial volume correction (PVC) in positron emission tomography (PET)
 
 extra:
   recipe-maintainers:
