@@ -1,5 +1,5 @@
 {% set name = "PETPVC" %}
-{% set version = "1.2.9" %}
+{% set version = "1.2.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/UCL/PETPVC/archive/v{{ version }}.tar.gz
-  sha256: 55c02b7af1df1e1740b7f9fa3e7129420c1154a8efc948e9ff84ca43c539197b
+  sha256: 3a53e26ee4ebd9efea8804f3516b230c1328c38de3e8e2ba3f901da4437554ee
 
 build:
   number: 0
