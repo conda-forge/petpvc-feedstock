@@ -1,17 +1,25 @@
 #!/usr/bin/env bash
 
-mkdir build
-cd build
+set -ex
 
-cmake $CMAKE_ARGS -GNinja \
-    -DCMAKE_BUILD_TYPE:STRING=Release \
-    -DCMAKE_INSTALL_PREFIX:STRING=$PREFIX \
-    ..
+# config
+cmake ${CMAKE_ARGS} \
+	-D CMAKE_BUILD_TYPE:STRING=Release \
+	-D CMAKE_INSTALL_PREFIX:STRING=${PREFIX} \
+	-G Ninja \
+	-B build \
+	-S ${SRC_DIR}
 
-cmake --build .
+# build
+cmake --build build --parallel ${CPU_COUNT}
 
-ctest --extra-verbose --output-on-failure .
+# install
+cmake --install build
 
-cmake --install .
+# post-install
+rm -rf "${PREFIX}/parc"
 
-rm -rf $PREFIX/parc
+# test
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" ]]; then
+ctest --test-dir build --extra-verbose --output-on-failure
+fi
