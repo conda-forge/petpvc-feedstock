@@ -1,8 +1,7 @@
-{% set name = "PETPVC" %}
 {% set version = "1.2.11" %}
 
 package:
-  name: {{ name|lower }}
+  name: petpvc
   version: {{ version }}
 
 source:
@@ -10,7 +9,7 @@ source:
   sha256: f9339a73a80ac6fdacac4543b8ff9ae1b76344dd40cdf7e87337d0484576c245
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
@@ -19,8 +18,6 @@ requirements:
     - ninja
   host:
     - libitk-devel
-  run:
-    - libitk
 
 test:
   commands:
