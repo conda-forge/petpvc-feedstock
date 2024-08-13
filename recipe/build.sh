@@ -20,6 +20,6 @@ cmake --install build
 rm -rf "${PREFIX}/parc"
 
 # test
-if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" ]]; then
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
 ctest --test-dir build --extra-verbose --output-on-failure
 fi
