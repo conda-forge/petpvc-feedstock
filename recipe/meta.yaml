@@ -20,8 +20,6 @@ requirements:
     - ninja
   host:
     - libitk-devel
-  run:
-    - libitk
 
 test:
   commands:
