@@ -184,4 +184,5 @@ Feedstock Maintainers
 =====================
 
 * [@ghisvail](https://github.com/ghisvail/)
+* [@kristhielemans](https://github.com/kristhielemans/)
 
